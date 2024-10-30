@@ -13,24 +13,24 @@ import { en, es, id, ar, pt } from "./lib/idiomas/total-idiomas.js"
 // [ES] > Agrega el número que será Bot y los que serán propietarios.
 // [EN] > Add the number that will be Bot and those that will be owners.
 global.owner = [
-["56928561853", 'MichiBot', true], //MichiBot🐈
-["56941827124"], 
-["56928561853"], 
-["56941827124"],
-['56941827124'],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"],
-["56941827124"]]
+["5217202953045", 'Monkey Bot', true], //Monkey Bot🐈
+["5217202953045"], 
+["5217202953045"], 
+["5217202953045"],
+['5217202953045'],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"],
+["5217202953045"]]
 
 global.mods = []
 global.prems = []
@@ -131,9 +131,9 @@ global.moment = moment
 // [ES] > Agregate a ti, colaboradores o ayudates, aparecerá en el comando de lista de contactos.
 // [EN] > Adding yourself, collaborators or helpers will appear in the contact list command.
 global.official = [ // Agregate si eres Owner
-["56941827124", 'MichiBot', 1], 
-["56941827124", 'MichiBot', 1],  
-["56928561853", 'MichiBot', 1]]
+["5217202953045", 'MonkeyBot', 1], 
+["5217202953045", 'MonkeyBot', 1],  
+["5217202953045", 'MonkeyBot', 1]]
 
 global.mail = '' // Add email
 global.desc = '' // Add short description (20 caractres max)
@@ -141,8 +141,8 @@ global.desc2 = '' // Add long description (90 caractres max) (Este parámetro se
 global.country = '' // Add country, example: 🇪🇨
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
-global.packname = `MichiBot` //"MichiBot"
-global.author = `MichiBot` //"MichiBot"
+global.packname = `MonkeyBot` //"MonkeyBot"
+global.author = `MonkeyBot` //"MonkeyBot"
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 // [ES] > INFORMACIÓN DE VERSIONES DEL BOT, POR FAVOR 
@@ -150,7 +150,7 @@ global.author = `MichiBot` //"MichiBot"
 // [EN] > BOT VERSION INFORMATION, PLEASE KEEP THIS UNCHANGED, WE STRIVE DAILY TO PROVIDE YOU WITH A BOT FOR THE COMMUNITY, BE GRATEFUL
 global.vs = "1.7.0"
 global.vsJB = "3.0 (Beta)"
-global.gt = "MichiBot"
+global.gt = "MonkeyBot"
 
 fetchDataAndProcess().catch(error => console.error('Ocurrió un error:', error))
 
@@ -178,9 +178,9 @@ global.eg = '╰⊱💚⊱ *𝙀́𝙓𝙄𝙏𝙊 | 𝙎𝙐𝘾𝘾𝙀𝙎�
 global.exito = eg
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
-global.wm = "MichiBot"
-global.igfg = "MichiBot"
-global.nomorown = "56928561853"
+global.wm = "MonkeyBot"
+global.igfg = "MonkeyBot"
+global.nomorown = "527202953045"
 global.pdoc = ["application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", "application/msword", "application/pdf", "text/rtf"]
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
