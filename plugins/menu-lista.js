@@ -109,16 +109,16 @@ let menu = `
 ⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ⊜ *Experiencia ➟* ${exp} ⚡
 ⊜ *Diamantes ➟* ${limit} 💎
-⊜ *MichiCoins ➟* ${money} 🐈
+⊜ *MonkeyCoins ➟* ${money} 🐈
 ⊜ *Tokens ➟* ${joincount} 🪙`.trim()
       
 const buttonParamsJson = JSON.stringify({
 title: "VER COMANDOS",
-description: "Infórmate por medios oficiales sobre MichiBot",
+description: "Infórmate por medios oficiales sobre MonkeyBot",
 sections: [
 { title: "ℹ️ Información", highlight_label: "Popular",
 rows: [
-{ header: "💸 Comprar", title: "🔓 Para: Todos", description: "MichiBot se mantiene funcionando gracias a que lo compran, tu tambien puedes adquirirlo", id: usedPrefix + "adquirir" }
+{ header: "💸 Comprar", title: "🔓 Para: Todos", description: "MonkeyBot se mantiene funcionando gracias a que lo compran, tu tambien puedes adquirirlo", id: usedPrefix + "adquirir" }
 ]},
 { title: "🔖 Atajos", highlight_label: "Nuevo",
 rows: [
@@ -185,7 +185,7 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 ⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ⊜ *Experiencia ➟* ${exp} ⚡
 ⊜ *Diamantes ➟* ${limit} 💎
-⊜ *MichiCoins ➟* ${money} 🐈
+⊜ *MonkeyCoins ➟* ${money} 🐈
 ⊜ *Tokens ➟* ${joincount} 🪙
 
 *╭━〔 🐈 OPCIONES DE MENU 🐈 〕⬣*
