@@ -1477,7 +1477,7 @@ mentionedJid:[user],
 "showAdAttribution": true,
 "renderLargerThumbnail": true,
 "thumbnail": apii.data, 
-"title": [wm, 'MichiBot ' + gt + ' ', '@ceogeripium.dzn'].getRandom(),
+"title": [wm, 'MonkeyBot ' + gt + ' ', '@monosexo'].getRandom(),
 "containsAutoReply": true,
 "mediaType": 1, 
 sourceUrl: 'https://chat.whatsapp.com/LfJfgWkF25pIik8KW0QPU6' }}}, { quoted: fkontak2 })
@@ -1569,7 +1569,7 @@ restrict: lenguajeGB['smsRestrict'](),
 //if (msg) return m.reply(msg)
 	
 let tg = { quoted: m, userJid: conn.user.jid }
-let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, 'Monkey Bot' + gt + ' ', '@ceogeripium.dzn'].getRandom(), thumbnail: gataImg, sourceUrl: accountsgb }}}}, tg)
+let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, 'Monkey Bot' + gt + ' ', '@monosexo'].getRandom(), thumbnail: gataImg, sourceUrl: accountsgb }}}}, tg)
 if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id })
 }
 
