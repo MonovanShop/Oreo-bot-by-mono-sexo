@@ -14,7 +14,6 @@ if (/^menu de ventas|menú de ventas|ventas$/i.test(m.text) ) { //sin prefijo
 ${pickRandom([`Hola buenas, tenemos a la venta:
 🔸Bot de etiquetas para grupos 24/7
 🔸Bot de etiquetas propio personalizado
-🔸APK de spam
 🔸APK de Spotify premium
 
 Selecciona tu opción escribiendo lo que necesites
@@ -32,14 +31,8 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^bot de etiquetas|bot para grupos|precios|info del bot|informacion|informacion del bot$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos por 3 grupos permanentes:
-S/10🇵🇪
-$3000🇨🇱
-$3000🇦🇷
-$12000🇨🇴
 $80🇲🇽
-$3🇺🇸
-$45🇧🇴
-$110🇺🇾`])}
+$3🇺🇸`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -48,29 +41,17 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^bot personalizado|bot propio personalizado|bot de etiquetas propio personalizado|info del bot|informacion|informacion del bot$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para bot propio personalizado:
-S/20🇵🇪
-$6000🇨🇱
-$6000🇦🇷
-$25000🇨🇴
 $150🇲🇽
-$6🇺🇸
-$90🇧🇴
-$220🇺🇾`])}
+$6🇺🇸`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
 }
-if (/^chips|chip chileno|chips chilenos|info del chip|informacion|informacion del bot$/i.test(m.text) ) { //sin prefijo 
+if (/^chips|chip mexicano|chips mexicano|info del chip|informacion|informacion del bot$/i.test(m.text) ) { //sin prefijo 
     let teks = `
-${pickRandom([`Estos son los precios que tenemos para números de chip +56:
-S/6🇵🇪
-$2000🇨🇱
-$2000🇦🇷
-$8000🇨🇴
-$50🇲🇽
-$2🇺🇸
-$25🇧🇴
-$60🇺🇾`])}
+${pickRandom([`Estos son los precios que tenemos para números de chip +52:
+$20🇲🇽
+$1🇺🇸`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -78,14 +59,8 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^APK de spam|APK para spam|precios|info del bot|informacion|informacion del bot$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para APK de spam:
-S/10🇵🇪
-$3000🇨🇱
-$3000🇦🇷
-$12000🇨🇴
 $80🇲🇽
-$3🇺🇸
-$45🇧🇴
-$110🇺🇾`])}
+$3🇺🇸`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -93,14 +68,8 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^APK de Spotify premium|precios|info del bot|informacion|informacion del bot$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para APK de Spotify premium:
-S/10🇵🇪
-$3000🇨🇱
-$3000🇦🇷
-$12000🇨🇴
 $80🇲🇽
-$3🇺🇸
-$45🇧🇴
-$110🇺🇾`])}
+$3🇺🇸`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -109,14 +78,8 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^APK de seguidores|APK para seguidores|precios|info del bot|informacion|informacion del bot$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para APK de seguidores:
-S/10🇵🇪
-$3000🇨🇱
-$3000🇦🇷
-$12000🇨🇴
 $80🇲🇽
-$3🇺🇸
-$45🇧🇴
-$110🇺🇾`])}
+$3🇺🇸`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -252,15 +215,8 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^deseo continuar|si quiero comprar$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`Selecciona tu método de pago por favor:
-Argentina🇦🇷
-Perú🇵🇪
-Chile🇨🇱
-Colombia🇨🇴
 México🇲🇽
-Estados Unidos🇺🇸
-Bolivia🇧🇴
-Paraguay🇵🇾
-Uruguay🇺🇾`])}
+Estados Unidos🇺🇸`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -277,77 +233,13 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
 }
 
-if (/^bolivia🇧🇴|🇧🇴$/i.test(m.text) ) { //sin prefijo 
-    let teks = `
-${pickRandom([`🇧🇴 BOLIVIA
-INGRESE AL SIGUIENTE ENLACE PARA RECIBIR EL CODIGO QR PARA REALIZAR EL PAGO:
-https://telegra.ph/file/a2e43b0140c74a737d502.png`])}
-`.trim()
-conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
-
-}
-
-if (/^perú🇵🇪|peru🇵🇪|🇵🇪|perú|peru$/i.test(m.text) ) { //sin prefijo 
-    let teks = `
-${pickRandom([`🇵🇪 PERU
-TITULAR: JAIR GONZALES 
-
-YAPE
-967699188
-
-PLIN
-955095498
-
-BCP
-19177757684012
-CCI: 00219117775768401250
-
-INTERBANK
-8983383526827
-CCI: 00389801338352682746`])}
-`.trim()
-conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
-
-}
-
 if (/^mexico|méxico|mexico🇲🇽|méxico🇲🇽|🇲🇽$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`🇲🇽 MEXICO
-TITULAR: ESMERALDA MIRELES
+TITULAR: MA COCABET 
 
-🏦 BANCO AZTECA
-5165760411850620
-
-🏦 BANCO STP
-646700146401786732
-
-🏦 BANCO BANORTE
-072700012100058870`])}
-`.trim()
-conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
-
-}
-
-if (/^colombia|colombia🇨🇴|🇨🇴$/i.test(m.text) ) { //sin prefijo 
-    let teks = `
-${pickRandom([`🇨🇴 COLOMBIA
-TITULAR: Juan Rudas
-
-🏦 NEQUI
-3005371659`])}
-`.trim()
-conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
-
-}
-
-if (/^uruguay|uruguay🇺🇾|🇺🇾$/i.test(m.text) ) { //sin prefijo 
-    let teks = `
-${pickRandom([`URUGUAY 🇺🇾
-INGRESAR A LA APP DE PREX Y A TRANSFERIR A OTROS PAISES(PERU) Y TRANSFERIR EL PRECIO QUE SALE EN SOLES
-
-PREX
-Marcelo Gonzales
-12156998`])}
+🏦 BANCO BBVA
+4152314155999181`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -357,7 +249,7 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^paypal|estados unidos🇺🇸|🇺🇸$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`🇺🇸 PAY PAL
-https://paypal.me/Richetti123`])}
+https://www.paypal.me/5631709515`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -369,21 +261,6 @@ ${pickRandom([`🇨🇱Cta rut :
 20.993.589-9
 👤Nombre:
 Paula Aquino`])}
-`.trim()
-conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
-
-}
-
-if (/^argentina|argentina🇦🇷|🇦🇷$/i.test(m.text) ) { //sin prefijo 
-    let teks = `
-${pickRandom([`CBU 🇦🇷
-0000013000032232325985
-
-🏷️Alias
-44713108.PREX 
-
-👤Nombre:
-Sofía ortiz`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
