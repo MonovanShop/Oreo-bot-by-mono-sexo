@@ -149,11 +149,11 @@ let menu = `HOLA VEO QUE ESTAS INTERESADO EN COMPRAR EL BOT
 > 🤖Si quieres que te atienda nuestro asistente virtual comunícate a este número +56997524559🤖
 
 Y si quieres que te atienda una persona real escríbele a nuestros creadores:
-Geri: +56 9 4182 7124
-Richetti: +56 9 2856 1853
+Monovan: +52 720 295 3045
+Sr. Alien: +52 669 250 1415
 
 También puedes probar nuestro bot en este grupo:
-> https://chat.whatsapp.com/L1rd6UlRIaXC82vFLlMEop`.trim()
+> https://chat.whatsapp.com/GuGHxQ2Xojq82jCdKeNfzU`.trim()
 await conn.sendFile(m.chat, gataImg, './Menu2.jpg', menu, fkontak, false, { contextInfo: {mentionedJid, externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: ' MonkeyBot ', previewType: 0, thumbnail: imagen4, sourceUrl: redesMenu }}})
 //conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, fkontak)
 } catch (e) {
