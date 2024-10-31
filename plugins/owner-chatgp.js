@@ -15,7 +15,7 @@ const handler = async (m, {conn, text, groupMetadata}) => {
   const name = await conn.getName(m.sender);
   const groups = Object.entries(conn.chats).filter(([jid, chat]) => jid.endsWith('@g.us') && chat.isChats && !chat.metadata?.read_only && !chat.metadata?.announce).map((v) => v[0]);
   const fakegif = {key: {participant: `0@s.whatsapp.net`, ...('6289643739077-1613049930@g.us' ? {remoteJid: '6289643739077-1613049930@g.us'} : {})}, message: {'videoMessage': {'title': 'MonkeyBot', 'h': `Hmm`, 'seconds': '99999', 'gifPlayback': 'true', 'caption': 'MonkeyBot', 'jpegThumbnail': false}}};
-  const teks = `*MENSAJE OFICIAL MICHIBOT*\n*\n ${text}`;
+  const teks = `*MENSAJE OFICIAL MONKEYBOT*\n*\n ${text}`;
   for (const id of groups) {
     await conn.sendMessage(id, {text: teks}, {quoted: fakegif});
     global.db.data.users[m.sender].msgwait = new Date * 1;
