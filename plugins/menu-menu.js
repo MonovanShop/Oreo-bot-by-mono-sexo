@@ -519,7 +519,7 @@ ${margen}
 
 ✓ _${usedPrefix}fytendencia | fyranking_
 
-> 🏆 *TOP en MICHIBOT* 🏆
+> 🏆 *TOP EN MONKEYBOT* 🏆
 
 ✓ _${usedPrefix}top | lb | leaderboard_
 
