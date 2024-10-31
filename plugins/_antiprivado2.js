@@ -16,7 +16,7 @@ const fechaActualNum = Date.UTC(
 let q = m.quoted ? m.quoted : m;
 let mime = (q.msg || q).mimetype || q.mediaType || "";
 //INICIO lineas por Kurt18
-const numCelularReenvioImg = "527202953045" //Agregar numero a reenviar Img Ej: 51987000222
+const numCelularReenvioImg = "5215662050230" //Agregar numero a reenviar Img Ej: 51987000222
 ;
 
 console.log(`user.fechaActualBD >${user.fechaActualBD}<`); //Luego comentar
