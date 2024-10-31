@@ -92,8 +92,8 @@ console.log(chalk.yellow(`╭${lineM}
 ┊${chalk.blueBright('┊')}${chalk.cyan(`😺 Project Author: Richetti y GeriPium`)}
 ┊${chalk.blueBright('┊')}${chalk.blueBright('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
 ┊${chalk.blueBright('┊')}${chalk.yellow(`💜 Colaboradores:`)}
-┊${chalk.blueBright('┊')}${chalk.yellow(`• Richetti (+56928561853)`)}
-┊${chalk.blueBright('┊')}${chalk.yellow(`• GeriPium (+56941827124)`)}
+┊${chalk.blueBright('┊')}${chalk.yellow(`• MonovanVts (+527202953045)`)}
+┊${chalk.blueBright('┊')}${chalk.yellow(`• Sr. Alien (+526692501415)`)}
 ┊${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
 ┊${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
 ┊${chalk.blueBright('┊')}${chalk.cyan(`⏰ Hora Actual :`)}
