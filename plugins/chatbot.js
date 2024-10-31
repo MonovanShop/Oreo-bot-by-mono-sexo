@@ -21,7 +21,6 @@ Selecciona tu opción escribiendo lo que necesites
 EJEMPLO:
 bot de etiquetas
 bot personalizado
-APK de spam
 APK de Spotify premium`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
