@@ -1,6 +1,3 @@
-// Botones interactivos adptados y funcionando por Gata Dios (GataNina-Li)
-
-import { getDevice } from '@whiskeysockets/baileys'
 import fs from 'fs'
 import moment from 'moment-timezone'
 import fetch from 'node-fetch'
@@ -10,7 +7,6 @@ import PhoneNumber from 'awesome-phonenumber'
 import { promises } from 'fs'
 import { join } from 'path'
 let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, command }) => {
-const dispositivo = await getDevice(m.key.id)
 try {
 let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
 let { exp, limit, level, role } = global.db.data.users[m.sender]
@@ -71,7 +67,7 @@ let mentionedJid = [who]
 let username = conn.getName(who)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let pp = gataVidMenu
-let vn = 'https://qu.ax/bfaM.mp3'
+let vn = './media/menu.mp3'
 let pareja = global.db.data.users[m.sender].pasangan 
 //let fsizedoc = '1'.repeat(10)
 //let adReply = { fileLength: fsizedoc, seconds: fsizedoc, contextInfo: { forwardingScore: fsizedoc, externalAdReply: { showAdAttribution: true, title: wm, body: '👋 ' + username, mediaUrl: ig, description: 'Hola', previewType: 'PHOTO', thumbnail: await(await fetch(gataMenu.getRandom())).buffer(), sourceUrl: redesMenu.getRandom() }}}
@@ -79,7 +75,7 @@ const numberToEmoji = { "0": "0️⃣", "1": "1️⃣", "2": "2️⃣", "3": "3�
 let lvl = level
 let emoji = Array.from(lvl.toString()).map((digit) => numberToEmoji[digit] || "❓").join("")
 
-const lugarFecha = moment().tz('America/Lima')
+const lugarFecha = moment().tz('America/Guadalajara')
 const formatoFecha = {
 weekdays: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
 months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
@@ -87,82 +83,6 @@ months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto
 lugarFecha.locale('es', formatoFecha)
 const horarioFecha = lugarFecha.format('dddd, DD [de] MMMM [del] YYYY || HH:mm A').replace(/^\w/, (c) => c.toUpperCase())
 
-if (!/web|desktop|unknown/gi.test(dispositivo)) {  
-let menu = `
-⎔ \`\`\`${horarioFecha}\`\`\`
-⎔ *${lenguajeGB['smsTotalUsers']()}* ➺ _${Object.keys(global.db.data.users).length}_ 
-⎔ *Registrados »* ${rtotalreg}/${totalreg}    
-⎔ *${lenguajeGB['smsUptime']()}* ➺ _${uptime}_ 
-⎔ *${lenguajeGB['smsVersion']()}* ➺ _${vs}_
-⎔ *${lenguajeGB['smsMode']()} ➺* _${global.opts['self'] ? `${lenguajeGB['smsModePrivate']().charAt(0).toUpperCase() + lenguajeGB['smsModePrivate']().slice(1).toLowerCase()}` : `${lenguajeGB['smsModePublic']().charAt(0).toUpperCase() + lenguajeGB['smsModePublic']().slice(1).toLowerCase()}`}_
-⎔ *${lenguajeGB['smsBanChats']()}* ➺ _${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}_ 
-⎔ *${lenguajeGB['smsBanUsers']()}* ➺ _${Object.entries(global.db.data.users).filter(user => user[1].banned).length}_ ${(conn.user.jid == global.conn.user.jid ? '' : `\n⎔ *SOY SUB BOT DE: https://wa.me/${global.conn.user.jid.split`@`[0]}*`) || ''}
-
-✨ *◜INFORMACIÓN DEL USUARIO◞* ✨
-⊜ *Tipo de registro »* ${user.registered === true ? `_${user.registroC === true ? 'Registro Completo 🗂️' : 'Registro Rápido 📑'}_` : '❌ _Sin registro_'}
-⊜ *Mi estado »* ${typeof user.miestado !== 'string' ? '❌ _' + usedPrefix + 'miestado_' : '_Me siento ' + user.miestado + '_'}
-⊜ *Registrado »* ${user.registered === true ? '✅' : '❌ _' + usedPrefix + 'verificar_'}
-⊜ *${lenguajeGB['smsBotonM7']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM7']().slice(1).toLowerCase()} »* ${user.premiumTime > 0 ? '✅' : '❌ _' + usedPrefix + 'pase premium_'}
-⊜ *${lenguajeGB['smsBotonM5']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM5']().slice(1).toLowerCase()} »* ${role}
-⊜ *${lenguajeGB['smsBotonM6']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM6']().slice(1).toLowerCase()} »* ${emoji} || ${user.exp - min}/${xp}
-⊜ *${lenguajeGB['smsPareja']()}* ${pareja ? `\n*»* ${name} 💕 ${conn.getName(pareja)}` : `🛐 ${lenguajeGB['smsResultPareja']()}`}
-⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
-⊜ *Experiencia ➟* ${exp} ⚡
-⊜ *Diamantes ➟* ${limit} 💎
-⊜ *MonkeyCoins ➟* ${money} 🐈
-⊜ *Tokens ➟* ${joincount} 🪙`.trim()
-      
-const buttonParamsJson = JSON.stringify({
-title: "VER COMANDOS",
-description: "Infórmate por medios oficiales sobre MonkeyBot",
-sections: [
-{ title: "ℹ️ Información", highlight_label: "Popular",
-rows: [
-{ header: "💸 Comprar", title: "🔓 Para: Todos", description: "MonkeyBot se mantiene funcionando gracias a que lo compran, tu tambien puedes adquirirlo", id: usedPrefix + "adquirir" }
-]},
-{ title: "🔖 Atajos", highlight_label: "Nuevo",
-rows: [
-{ header: "🤫 Sorteo", title: "🔐 Para: Admins", description: "Escoje un ganador al azar", id: usedPrefix + "sorteo" },
-{ header: "🎧 Youtube play", title: "🔓 Para: Todos", description: "Descarga canciones de youtube al momento", id: usedPrefix + "play" },
-{ header: "🚄 Velocidad", title: "🔓 Para: Todos", description: "Selecciona esto si deseas saber la rapidez del bot", id: usedPrefix + "ping" },
-]},
-{ title: "👾 Comandos Free Fire", highlight_label: "Nuevo",
-rows: [
-{ header: "🎲 Donador de sala", title: "🔐 Para: Admins", description: "Escoge dos donadores al azar, uno para primera sala y otro en caso de tercera sala", id: usedPrefix + "donarsala" },
-{ header: "📋 Lista 4 vs 4", title: "🔐 Para: Admins", description: "Tira una lista de 4 vs 4 para rellenar", id: usedPrefix + "4vs4" },
-{ header: "🏷️ Etiqueta general", title: "🔐 Para: Admins", description: "El bot menciona a todo el grupo", id: usedPrefix + "todos" },
-{ header: "👩‍🦰📋 Interna femenina", title: "🔐 Para: Admins", description: "Tira una lista de interna femenina para rellenar", id: usedPrefix + "internafem" },
-{ header: "👨‍🦰📋​ Interna masculina", title: "🔐 Para: Admins", description: "Tira una lista de interna masculina para rellenar", id: usedPrefix + "internamasc" },
-{ header: "👩‍🦰👨‍🦰📋​ Interna mixta", title: "🔐 Para: Admins", description: "Tira una lista de interna mixta para rellenar", id: usedPrefix + "internamixta" },
-{ header: "🔓​ Abrir grupo", title: "🔐 Para: Admins", description: "Todos pueden hablar en el grupo", id: usedPrefix + "grupo abrir" },
-{ header: "🔐​ Cerrar el grupo", title: "🔐 Para: Admins", description: "Solo admins pueden hablar en el grupo", id: usedPrefix + "grupo cerrar" }
-]},
-{ title: "🗂️ Configuracion Grupos", highlight_label: "Popular",
-rows: [
-{ header: "🫶 Activar bienvenidas", title: "🔐 Para: Admins", description: "Activa la bienvenida del grupo", id: usedPrefix + "on welcome" },
-{ header: "👋 Desactivar Bienvenidas", title: "🔐 Para: Admins", description: "Desactiva la bienvenida del grupo", id: usedPrefix + "off welcome" },
-{ header: "🤐 Activar Modo admin", title: "🔐 Para: Admins", description: "Activa el bot para que solo puedan usarlo los admins", id: usedPrefix + "on modoadmin" },
-{ header: "🤗​ Desactivar moodo admin", title: "🔐 Para: Admins", description: "Activa el bot para que pueda usarlo todo el grupo", id: usedPrefix + "off modoadmin" }
-]},
-
-{ title: "Ⓜ️ Menú", highlight_label: "Popular",
-rows: [
-{ header: "⭐ Menú completo", title: "", description: "Visita todos los comandos", id: usedPrefix + "allmenu" }
-]}
-]})
-const interactiveMessage = {
-body: { text: menu },
-footer: { text: wm + ` \nSi algo no funciona utilice el comando *${usedPrefix}menu2*` },
-header: { title: `⭐ *------- NUEVO MENÚ -------* ⭐\n${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.genero == 'Ocultado 🕶️' ? `🕶️` : user.genero == 'Mujer 🚺' ? `🚺` : user.genero == 'Hombre 🚹' ? `🚹` : '👤'} ${user.registered === true ? user.name : taguser} 💖*`, subtitle: "test4", hasMediaAttachment: false },
-nativeFlowMessage: { buttons: [{ 
-name: "single_select",
-buttonParamsJson
-}]
-}}
-const message = { messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 }, interactiveMessage }
-await conn.relayMessage(m.chat, { viewOnceMessage: { message } }, {})
-      
-} else { 
 let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.genero == 'Ocultado 🕶️' ? `🕶️` : user.genero == 'Mujer 🚺' ? `🚺` : user.genero == 'Hombre 🚹' ? `🚹` : '👤'} ${user.registered === true ? user.name : taguser} 💖*
 
 ⎔ \`\`\`${horarioFecha}\`\`\`
@@ -185,7 +105,7 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 ⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ⊜ *Experiencia ➟* ${exp} ⚡
 ⊜ *Diamantes ➟* ${limit} 💎
-⊜ *MonkeyCoins ➟* ${money} 🐈
+⊜ *NekoCoins ➟* ${money} 🐈
 ⊜ *Tokens ➟* ${joincount} 🪙
 
 *╭━〔 🐈 OPCIONES DE MENU 🐈 〕⬣*
@@ -244,20 +164,22 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 ┃💎 _${lenguajeGB['smsTex20']()}_ 💎
 ┃➺ _${usedPrefix}ownermenu_
 ┃
-┃✅ *_CUENTAS OFICIALES GATABOT_* ✅
-┃➺ _${usedPrefix}cuentasgatabot | cuentasgb_
+┃✅ *_CUENTAS OFICIALES NEKOTINA* ✅
+┃➺ _${usedPrefix}cuentas| cuentasgb_
 ┃
 *╰━━━━━━━━━━━━━⬣*`.trim()
-await conn.sendFile(m.chat, gataImg, 'lp.jpg', menu, fkontak, false, { contextInfo: {mentionedJid, externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: wm, previewType: 0, thumbnail: imagen4, sourceUrl: redesMenu}}}) 
+
+await conn.sendMessage(m.chat, {image: gataImg, caption: menu, mentions: mentionedJid}, {quoted: fkontak})    
 await conn.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
 //conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, fkontak)
-}} catch (e) {
+	
+} catch (e) {
 await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() + '*\n*' + usedPrefix + `${lenguajeGB.lenguaje() == 'es' ? 'reporte' : 'report'}` + '* ' + `${lenguajeGB.smsMensError2()} ` + usedPrefix + command)
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
 console.log(e)}}
 
 handler.command = /^(menu|menú|memu|memú|help\?)$/i
-handler.register = true
+handler.register = false
 export default handler
 
 const more = String.fromCharCode(8206)
@@ -267,167 +189,3 @@ let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
 let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
 let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
 return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}  
-
-/* 
-import fs from 'fs'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
-const { levelling } = '../lib/levelling.js'
-import moment from 'moment-timezone'
-
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner}) => {
-try{
-let locale = 'es'
-let d = new Date(new Date + 3600000)
-let time = d.toLocaleTimeString(locale, {
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric'
-    })
-
-let _uptime = process.uptime() * 1000
-let uptime = clockString(_uptime) 
-wm = global.wm
-vs = global.vs
-      
-let { exp, limit, level, role } = global.db.data.users[m.sender]
-let { min, xp, max } = xpRange(level, global.multiplier)
-let name = await conn.getName(m.sender)
-let pareja = global.db.data.users[m.sender].pasangan 
-let user = global.db.data.users[m.sender]
-let totalreg = Object.keys(global.db.data.users).length
-let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
-
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
-
-const sections = [{
-title: comienzo + ' ' + lenguajeGB['smsLista1']() + ' ' + fin,
-rows: [
-{title: lenguajeGB['smsLista2'](), rowId: `${usedPrefix}creadora`},
-{title: lenguajeGB['smsLista3'](), rowId: `${usedPrefix}donar`},
-{title: lenguajeGB['smsLista4'](), rowId: `${usedPrefix}ping`},
-{title: lenguajeGB['smsLista5'](), rowId: `${usedPrefix}infomenu`},
-{title: lenguajeGB['smsLista6'](), rowId: `${usedPrefix}allmenu`},
-{title: lenguajeGB['smsLista7'](), rowId: `${usedPrefix}instalarbot`},
-{title: lenguajeGB['smsLista8'](), rowId: `${usedPrefix}serbot`},
-{title: lenguajeGB['smsLista9'](), rowId: `${usedPrefix}términos`, description: '\n'}
-]},{
-title: comienzo + ' ' + lenguajeGB['smsLista10']() + ' ' + fin,
-rows: [
-{title: lenguajeGB['smsLista11'](), rowId: `${usedPrefix}top`},
-{title: lenguajeGB['smsLista12'](), rowId: `${usedPrefix}listprem`},
-{title: lenguajeGB['smsLista13'](), rowId: `${usedPrefix}pase premium`},
-{title: lenguajeGB['smsLista14'](), rowId: `${usedPrefix}inventario 3`},
-{title: lenguajeGB['smsLista15'](), rowId: `${usedPrefix}rpgmenu`},
-{title: lenguajeGB['smsLista16'](), rowId: `${usedPrefix}buy`},
-{title: lenguajeGB['smsLista17'](), rowId: `${usedPrefix}inventory`, description: '\n'}
-]},{	
-title: comienzo + ' ' + lenguajeGB['smsLista18']() + ' ' + fin,
-rows: [
-{title: lenguajeGB['smsLista19'](), rowId: `${usedPrefix}descargasmenu`},
-{title: lenguajeGB['smsLista20'](), rowId: `${usedPrefix}buscarmenu`},
-{title: lenguajeGB['smsLista21'](), rowId: `${usedPrefix}convertidormenu`},
-{title: lenguajeGB['smsLista22'](), rowId: `${usedPrefix}audioefectomenu`},
-{title: lenguajeGB['smsLista22_1'](), rowId: `${usedPrefix}herramientasmenu`, description: '\n'}
-]},{
-title: comienzo + ' ' + lenguajeGB['smsLista23']() + ' ' + fin,
-rows: [
-{title: lenguajeGB['smsLista24'](), rowId: `${usedPrefix}juegosmenu`},
-{title: lenguajeGB['smsLista25'](), rowId: `${usedPrefix}audios`},
-{title: lenguajeGB['smsLista26'](), rowId: `${usedPrefix}stickermenu`},
-{title: lenguajeGB['smsLista27'](), rowId: `${usedPrefix}makermenu`},
-{title: lenguajeGB['smsLista28'](), rowId: `${usedPrefix}menulogos2`},
-{title: lenguajeGB['smsLista29'](), rowId: `${usedPrefix}randommenu`},
-{title: lenguajeGB['smsLista30'](), rowId: `${usedPrefix}hornymenu`, description: '\n'}
-]},{	
-title: comienzo + ' ' + lenguajeGB['smsLista31']() + ' ' + fin,
-rows: [
-{title: lenguajeGB['smsLista32'](), rowId: `${usedPrefix}grupomenu`},
-{title: lenguajeGB['smsLista33'](), rowId: `${usedPrefix}listas`},
-{title: lenguajeGB['smsLista34'](), rowId: `${usedPrefix}on`},
-{title: lenguajeGB['smsLista35'](), rowId: `${usedPrefix}ownermenu`}
-]}]
-
-const listMessage = {
-text: `╭━⊰ *${ucapan()}* ⊱━⬣
-┃
-┃ *︾ U S U A R I O ︾*
-┃
-┃»» *${user.genero === 0 ? '👤' : user.genero == 'Ocultado 🕶️' ? `🕶️` : user.genero == 'Mujer 🚺' ? `🚺` : user.genero == 'Hombre 🚹' ? `🚹` : '👤'} ${user.registered === true ? user.name : name}*
-┃»» *Mi estado* ➺ ${typeof user.miestado !== 'string' ? '_#miestado || Estado no asignado_' : '_Me siento ' + user.miestado + '_'}
-┃»» *Registrado ➺ ${user.registered === true ? '✅' : '❌ _#verificar_'}* 
-┃»» *Premium ➺ ${user.premiumTime > 0 ? '✅' : '❌ _#pase premium_'}*
-┃
-┃ *︾ M E N U ︾*
-┃
-┃✜ *${lenguajeGB['smsVersion']()}* 
-┃➺ \`\`\`${vs}\`\`\`
-┃✜ *Tipo de registro* 
-┃➺ ${user.registered === true ? `_${user.registroC === true ? 'Registro Completo 🗂️' : 'Registro Rápido 📑'}_` : '_' + usedPrefix + 'verificar_'} 
-┃   ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃✜ *${lenguajeGB['smsTotalUsers']()}* 
-┃➺ _${Object.keys(global.db.data.users).length}_
-┃✜ *Registrados* 
-┃➺ _${rtotalreg}/${totalreg}_
-┃✜ *${lenguajeGB['smsMode']()}* 
-┃➺ _${global.opts['self'] ? `*${lenguajeGB['smsModePrivate']()}*` : `*${lenguajeGB['smsModePublic']()}*`}_
-┃   ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃✜ *${lenguajeGB['smsTime']()}* 
-┃➺ _${time}_ 	    
-┃✜ *${lenguajeGB['smsUptime']()}* 
-┃➺ _${uptime}_
-┃   ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃✜ *${lenguajeGB['smsBanChats']()}* 
-┃➺ _${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}_ 
-┃✜ *${lenguajeGB['smsBanUsers']()}* 
-┃➺ _${Object.entries(global.db.data.users).filter(user => user[1].banned).length}_
-┃
-╰━⊰ *${wm}* ⊱━⬣\n
-*»» ✨ Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
-*»» ${lenguajeGB['smsPareja']()} ➺ ${pareja ? `${name} 💕 ${conn.getName(pareja)}` : `🛐 ${lenguajeGB['smsResultPareja']()}`}* ${(conn.user.jid == global.conn.user.jid ? '' : `\n»» *Sub Bot del:* wa.me/${global.conn.user.jid.split`@`[0]}`) || ''}`,
-footer: `*↓ TRUSTED LINK* ✅
-${readMore}${redesMenu.getRandom()}`, //${name} ${ucapan()} //lenguajeGB['smsMenu']()
-title: null,
-buttonText: `${lenguajeGB['smsListaMenu']()}`, 
-sections }
-await conn.sendMessage(m.chat, listMessage, {quoted: fkontak})
-
-
-} catch (e) {
-await conn.sendButton(m.chat, `\n${wm}`, lenguajeGB['smsMalError3']() + '#report ' + usedPrefix + command, null, [[lenguajeGB.smsMensError1(), `#reporte ${lenguajeGB['smsMensError2']()} *${usedPrefix + command}*`]], m)
-console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
-console.log(e)	
-}}
-handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|m|\?)$/i
-//handler.register = true
-handler.exp = 50
-export default handler
-
-function clockString(ms) {
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
-}
-
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
-
-function ucapan() {
-  const time = moment.tz('America/Los_Angeles').format('HH')  //America/Los_Angeles  Asia/Jakarta   America/Toronto
-  let res = `${lenguajeGB['smsSaludo']()}`
-  if (time >= 4) {
-    res = `${lenguajeGB['smsDia']()}`
-  }
-  if (time >= 11) {
-    res = `${lenguajeGB['smsTarde']()}`
-  }
-  if (time >= 15) {
-    res = `${lenguajeGB['smsTarde2']()}`
-  }
-  if (time >= 17) {
-    res = `${lenguajeGB['smsNoche']()}`
-  }
-  return res
-} 
-*/

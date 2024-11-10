@@ -236,6 +236,35 @@ ${generateCommand(commandsConfig, usedPrefix).replace(/≡/g, '𖡡')}
 
 ${margen}
 
+> LISTAS PARA VS Y MAS
+
+✓ .4vs4 Lista de 4 vs 4
+✓ .6vs6 Lista de 6 vs 6
+✓ .scrim Lista de scrim
+✓ .internamasc Lista de versus interno masculino
+✓ .internafem Lista de versus interno femenino
+✓ .internamixta Lista de versus interno mixto
+✓ .donarsala Escoge un donador de sala al azar en el grupo
+✓ .vs8 Lista de 8 vs 8 
+✓ .vs12 Lista de 12 vs 12
+✓ .vs16 Lista de 16 vs 16
+✓ .vs20 Lista de 20 vs 20
+✓ .vs24 Lista de 24 vs 24
+✓ .fem18 Lista de vivido para las 18🇲🇽
+✓ .fem19 Lista de vivido para las 19🇲🇽
+✓ .fem20 Lista de vivido para las 20🇲🇽
+✓ .fem21 Lista de vivido para las 21🇲🇽
+✓ .fem22 Lista de vivido para las 22🇲🇽
+✓ .fem23 Lista de vivido para las 23🇲🇽
+✓ .fem00 Lista de vivido para las 00🇲🇽
+✓ .masc18 Lista de vivido para las 18🇲🇽
+✓ .masc19 Lista de vivido para las 19🇲🇽
+✓ .masc20 Lista de vivido para las 20🇲🇽
+✓ .masc21 Lista de vivido para las 21🇲🇽
+✓ .masc22 Lista de vivido para las 22🇲🇽
+✓ .masc23 Lista de vivido para las 23🇲🇽
+✓ .masc00 Lista de vivido para las 00🇲🇽
+
 > 🧾 *AJUSTES/INFO - GRUPO* 🧾
 
 ✓ _${usedPrefix}configuracion_
@@ -271,7 +300,7 @@ ${margen}
 ✓ _${usedPrefix}morse decodificar *morse*_
 ✓ _${usedPrefix}fraseromantica_
 ✓ _${usedPrefix}historia_
-✓ _${usedPrefix}drive | dldrive *link*_
+
 > 👤 *CHAT ANONIMO* 👤
 
 ✓ _${usedPrefix}chatanonimo | anonimochat_
@@ -283,7 +312,6 @@ ${margen}
 > 🌐 *COMANDOS PARA GRUPOS* 🌐
 
 ✓ _${usedPrefix}add *numero*_
-✓ _${usedPrefix}mute | unmute *@tag*_
 ✓ _${usedPrefix}sacar | ban | kick  *@tag*_
 ✓ _${usedPrefix}grupo *abrir o cerrar*_
 ✓ _${usedPrefix}group *open o close*_
@@ -519,7 +547,7 @@ ${margen}
 
 ✓ _${usedPrefix}fytendencia | fyranking_
 
-> 🏆 *TOP EN MONKEYBOT* 🏆
+> 🏆 *TOP en 𝙉𝙀𝙆𝙊𝙏𝙄𝙉𝘼* 🏆
 
 ✓ _${usedPrefix}top | lb | leaderboard_
 
@@ -587,8 +615,8 @@ ${margen}
 ✓ _${usedPrefix}añadirxp *@tag cantidad*_
 ✓ _${usedPrefix}añadirgatacoins *@tag cantidad*_
 `.trim()
-await conn.sendFile(m.chat, gataImg, 'lp.jpg', menu, m, fakeChannel, false, { contextInfo: {mentionedJid, externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: wm, previewType: 0, thumbnail: imagen4, sourceUrl: redesMenu }}})
-//conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, fkontak)
+await conn.sendMessage(m.chat, {image: gataImg, caption: menu, mentions: mentionedJid}, {quoted: fkontak})    
+//conn.sendFile(m.chat, "./Menu2.jpg", 'gata.mp4', menu, fkontak)
 } catch (e) {
 await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() + '*\n*' + usedPrefix + `${lenguajeGB.lenguaje() == 'es' ? 'reporte' : 'report'}` + '* ' + `${lenguajeGB.smsMensError2()} ` + usedPrefix + command)
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
@@ -599,7 +627,7 @@ console.log(e)}
 
 //handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|menucompleto|allmenu|allm|m|\?)$/i
 handler.command = /^(menucompleto|allmenu|\?)$/i
-handler.register = true
+handler.register = false
 export default handler
 
 const more = String.fromCharCode(8206)
@@ -750,8 +778,6 @@ const commandsGames = [
 { comando: 'pelicula', descripcion: false, contexto: 'Descubre la película con emojis 🎬', showPrefix: true },
 { comando: 'adivinanza', descripcion: false, contexto: 'Adivina adivinador 🧞‍♀️', showPrefix: true },
 { comando: 'ruleta', descripcion: false, contexto: 'Suerte inesperada 💫', showPrefix: true },
-{ comando: 'ahorcado', descripcion: false, contexto: 'Adivina la palabras antes de que el ahorcado te atrape 😱', showPrefix: true },
-{ comando: 'ruletadelban', descripcion:false, contexto: 'Elimina un usuario al azar, solo para admins ☠️', showPrefix: true }
 ]
 const commandsAI = [
 { comando: 'simi', descripcion: '[texto] || [text]', contexto: 'Conversa con SimSimi', showPrefix: true },
@@ -763,4 +789,5 @@ const commandsAI = [
 { comando: 'gemini', descripcion: '[texto] || [text]', contexto: 'IA, Tecnología de Google', showPrefix: true },
 { comando: 'geminimg', descripcion: '(imagen) + [texto] || (image) + [text]', contexto: 'Busca información de una imagen', showPrefix: true },
 { comando: 'hd', descripcion: '(responde con una imagen) || (responds with an image)', contexto: 'Mejorar calidad de imagen', showPrefix: true },
-]
+] 
+

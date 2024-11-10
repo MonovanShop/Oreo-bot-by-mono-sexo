@@ -214,12 +214,12 @@ let str = `
 ∘ _Gol!_
 
 ╭════• ೋ•✧๑♡๑✧•ೋ •════╮
-                      🐈 MonkeyBot 🐈
+                      🐈 𝙉𝙀𝙆𝙊𝙏𝙄𝙉𝘼 🐈
          0:40 ━❍──────── -8:39
          ↻     ⊲  Ⅱ  ⊳     ↺
          VOLUMEN: ▁▂▃▄▅▆▇ 100%
 ╰════• ೋ•✧๑♡๑✧•ೋ •════╯`.trim()
-    conn.sendFile(m.chat, pp, 'Menu.png', str, m, false, { contextInfo: { mentionedJid }})
+    conn.sendFile(m.chat, pp, './Menu2.jpg', str, m, false, { contextInfo: { mentionedJid }})
 /*let menuA = `🎶 ${lenguajeGB['smsConfi2']()} *${username}*`.trim()
 let menuB = `
 ╭┄〔 *${wm}* 〕┄⊱
@@ -535,7 +535,7 @@ handler.help = ['infomenu'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
 handler.command = /^(menu2|audios|menú2|memu2|menuaudio|menuaudios|memuaudios|memuaudio|audios|audio)$/i
 handler.exp = 60
-//handler.register = true
+//handler.register = false
 export default handler
 
 const more = String.fromCharCode(8206)
