@@ -9,7 +9,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     let isVideo = /vid$/.test(command); // Si el comando es 'playvid', será un video, si es 'play' solo audio.
     let urls = search.all[0].url; // Tomamos la URL del primer resultado
 
-    let body = `🎶 ¡Disfruta de tu música gracias a Nekotina! 🎶
+    let body = `🎶 ¡Disfruta de tu música gracias a MonoSexo! 🎶
 
 ➢ Título: ${search.all[0].title}
 ➢ Vistas: ${search.all[0].views}
