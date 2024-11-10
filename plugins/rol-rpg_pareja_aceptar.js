@@ -53,8 +53,8 @@ return await conn.sendMessage(m.chat, {image: { url: "https://telegra.ph/file/bb
   mentionedJid: [m.sender],
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: '120363160031023229@newsletter',
-    newsletterName: "Infinitywa 💫",
+    newsletterJid: '120363355634940099@newsletter',
+    newsletterName: "🐵𝐂𝐀𝐍𝐀𝐋 𝐎𝐅𝐈𝐂𝐈𝐀𝐋 𝐃𝐄 𝐌𝐎𝐍𝐎 𝐒𝐄𝐗𝐎🐵",
     serverMessageId: -1,
   },
   forwardingScore: 999,
@@ -126,8 +126,8 @@ return await conn.sendMessage(m.chat, {image: { url: "https://telegra.ph/file/bb
   mentionedJid: [m.sender],
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: '120363160031023229@newsletter',
-    newsletterName: "INFINITY-WA 💫",
+    newsletterJid: '120363355634940099@newsletter',
+    newsletterName: "🐵𝐂𝐀𝐍𝐀𝐋 𝐎𝐅𝐈𝐂𝐈𝐀𝐋 𝐃𝐄 𝐌𝐎𝐍𝐎 𝐒𝐄𝐗𝐎🐵",
     serverMessageId: -1,
   },
   forwardingScore: 999,
