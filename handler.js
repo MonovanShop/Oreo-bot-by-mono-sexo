@@ -1480,7 +1480,7 @@ mentionedJid:[user],
 "title": [wm, 'MonkeyBot ' + gt + ' ', '@monosexo'].getRandom(),
 "containsAutoReply": true,
 "mediaType": 1, 
-sourceUrl: 'https://chat.whatsapp.com/LfJfgWkF25pIik8KW0QPU6' }}}, { quoted: fkontak2 })
+sourceUrl: 'https://chat.whatsapp.com/JGIxAhGuOeiJe2IlR04ZWj' }}}, { quoted: fkontak2 })
 apii.data = ''
 //this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] }, { quoted: fkontak2 })
 }}}
