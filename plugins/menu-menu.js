@@ -543,11 +543,11 @@ ${margen}
 ✓ _${usedPrefix}fantasymy | fymy_
 ✓ _${usedPrefix}fyentregar | fytransfer_
 
-> 🏆 *TOP en RPG Fnatasy* 🏆
+> 🏆 *TOP EN RPG Fnatasy* 🏆
 
 ✓ _${usedPrefix}fytendencia | fyranking_
 
-> 🏆 *TOP en 𝙉𝙀𝙆𝙊𝙏𝙄𝙉𝘼* 🏆
+> 🏆 *TOP EN MONKEYBOT* 🏆
 
 ✓ _${usedPrefix}top | lb | leaderboard_
 
